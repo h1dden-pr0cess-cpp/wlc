@@ -1,0 +1,15 @@
+/build/
+/out/
+/cmake-build-*/
+
+compile_commands.json
+
+.vscode/
+.idea/
+
+*.o
+*.obj
+
+*.exe
+
+*.log
