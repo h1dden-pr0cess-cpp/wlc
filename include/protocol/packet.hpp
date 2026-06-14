@@ -4,6 +4,9 @@
 #include<cstdint>
 #include<vector>
 
+inline constexpr std::uint32_t MAGIC = 0x574C4331;
+inline constexpr std::uint16_t VERSION = 1;
+
 enum class MessageType : uint16_t
 {
     Discovery,

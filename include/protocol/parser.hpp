@@ -3,18 +3,20 @@
 
 #include <protocol/packet.hpp>
 
-#include<vector>
-#include<cstdint>
+#include <vector>
+#include <cstdint>
+#include <span>
+#include <stdexcept>
 
 class Parser
 {
     public:
-        static Packet parser(const std::vector<std::uint8_t>& buf); 
+        static Packet parse(std::span<const uint8_t> buf);
     private:
-        static uint16_t read_u16(const std::vector<uint8_t>& buf, uint16_t& value);
-        static uint32_t read_u32(const std::vector<uint8_t>& buf, uint32_t& value);
+        static Header parse_header(std::span<const std::uint8_t>& buf);
 
-    const std::vector<uint8_t>& pars_buf
+        static uint16_t read_u16(std::span<const std::uint8_t>& buf);
+        static uint32_t read_u32(std::span<const std::uint8_t>& buf); 
 };
 
 

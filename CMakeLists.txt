@@ -32,7 +32,11 @@ add_executable(wlc)
 target_sources(wlc
     PRIVATE
         src/main.cpp
+
         src/app/wlc.cpp
+
+        src/protocol/parser.cpp
+        src/protocol/serializer.cpp
 )
 
 target_include_directories(wlc
